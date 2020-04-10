@@ -1408,7 +1408,7 @@ static int uvesafb_check_var(struct fb_var_screeninfo *var,
 	return 0;
 }
 
-static struct fb_ops uvesafb_ops = {
+const struct fb_ops uvesafb_ops = {
 	.owner		= THIS_MODULE,
 	.fb_open	= uvesafb_open,
 	.fb_release	= uvesafb_release,
@@ -1437,8 +1437,8 @@ static void uvesafb_init_info(struct fb_info *info, struct vbe_mode_ib *mode)
 	info->fix.ywrapstep = (par->ypan > 1) ? 1 : 0;
 
 	/* Disable blanking if the user requested so. */
-	if (!blank)
-		info->fbops->fb_blank = NULL;
+	/* if (!blank)
+		info->fbops->fb_blank = NULL; */
 
 	/*
 	 * Find out how much IO memory is required for the mode with
@@ -1507,8 +1507,8 @@ static void uvesafb_init_info(struct fb_info *info, struct vbe_mode_ib *mode)
 	info->flags = FBINFO_FLAG_DEFAULT |
 			(par->ypan ? FBINFO_HWACCEL_YPAN : 0);
 
-	if (!par->ypan)
-		info->fbops->fb_pan_display = NULL;
+	/* if (!par->ypan)
+		info->fbops->fb_pan_display = NULL; */
 }
 
 static void uvesafb_init_mtrr(struct fb_info *info)
