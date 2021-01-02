@@ -29,6 +29,160 @@
 #endif
 #include "edid.h"
 
+#ifdef CONFIG_FB_VMODES
+const struct fb_videomode fb_vesa_modes[] = {
+        /* 0 640x350-85 VESA */
+        { NULL, 85, 640, 350, 31746,  96, 32, 60, 32, 64, 3,
+          FB_SYNC_HOR_HIGH_ACT, FB_VMODE_NONINTERLACED, FB_MODE_IS_VESA},
+        /* 1 640x400-85 VESA */
+        { NULL, 85, 640, 400, 31746,  96, 32, 41, 01, 64, 3,
+          FB_SYNC_VERT_HIGH_ACT, FB_VMODE_NONINTERLACED, FB_MODE_IS_VESA },
+        /* 2 720x400-85 VESA */
+        { NULL, 85, 721, 400, 28169, 108, 36, 42, 01, 72, 3,
+          FB_SYNC_VERT_HIGH_ACT, FB_VMODE_NONINTERLACED, FB_MODE_IS_VESA },
+        /* 3 640x480-60 VESA */
+        { NULL, 60, 640, 480, 39682,  48, 16, 33, 10, 96, 2,
+          0, FB_VMODE_NONINTERLACED, FB_MODE_IS_VESA },
+        /* 4 640x480-72 VESA */
+        { NULL, 72, 640, 480, 31746, 128, 24, 29, 9, 40, 2,
+          0, FB_VMODE_NONINTERLACED, FB_MODE_IS_VESA },
+        /* 5 640x480-75 VESA */
+        { NULL, 75, 640, 480, 31746, 120, 16, 16, 01, 64, 3,
+          0, FB_VMODE_NONINTERLACED, FB_MODE_IS_VESA },
+        /* 6 640x480-85 VESA */
+        { NULL, 85, 640, 480, 27777, 80, 56, 25, 01, 56, 3,
+          0, FB_VMODE_NONINTERLACED, FB_MODE_IS_VESA },
+        /* 7 800x600-56 VESA */
+        { NULL, 56, 800, 600, 27777, 128, 24, 22, 01, 72, 2,
+          FB_SYNC_HOR_HIGH_ACT | FB_SYNC_VERT_HIGH_ACT,
+          FB_VMODE_NONINTERLACED, FB_MODE_IS_VESA },
+        /* 8 800x600-60 VESA */
+        { NULL, 60, 800, 600, 25000, 88, 40, 23, 01, 128, 4,
+          FB_SYNC_HOR_HIGH_ACT | FB_SYNC_VERT_HIGH_ACT,
+          FB_VMODE_NONINTERLACED, FB_MODE_IS_VESA },
+        /* 9 800x600-72 VESA */
+        { NULL, 72, 800, 600, 20000, 64, 56, 23, 37, 120, 6,
+          FB_SYNC_HOR_HIGH_ACT | FB_SYNC_VERT_HIGH_ACT,
+          FB_VMODE_NONINTERLACED, FB_MODE_IS_VESA },
+        /* 10 800x600-75 VESA */
+        { NULL, 75, 800, 600, 20202, 160, 16, 21, 01, 80, 3,
+          FB_SYNC_HOR_HIGH_ACT | FB_SYNC_VERT_HIGH_ACT,
+          FB_VMODE_NONINTERLACED, FB_MODE_IS_VESA },
+        /* 11 800x600-85 VESA */
+        { NULL, 85, 800, 600, 17761, 152, 32, 27, 01, 64, 3,
+          FB_SYNC_HOR_HIGH_ACT | FB_SYNC_VERT_HIGH_ACT,
+          FB_VMODE_NONINTERLACED, FB_MODE_IS_VESA },
+        /* 12 1024x768i-43 VESA */
+        { NULL, 43, 1024, 768, 22271, 56, 8, 41, 0, 176, 8,
+          FB_SYNC_HOR_HIGH_ACT | FB_SYNC_VERT_HIGH_ACT,
+          FB_VMODE_INTERLACED, FB_MODE_IS_VESA },
+        /* 13 1024x768-60 VESA */
+        { NULL, 60, 1024, 768, 15384, 160, 24, 29, 3, 136, 6,
+          0, FB_VMODE_NONINTERLACED, FB_MODE_IS_VESA },
+        /* 14 1024x768-70 VESA */
+        { NULL, 70, 1024, 768, 13333, 144, 24, 29, 3, 136, 6,
+          0, FB_VMODE_NONINTERLACED, FB_MODE_IS_VESA },
+        /* 15 1024x768-75 VESA */
+        { NULL, 75, 1024, 768, 12690, 176, 16, 28, 1, 96, 3,
+          FB_SYNC_HOR_HIGH_ACT | FB_SYNC_VERT_HIGH_ACT,
+          FB_VMODE_NONINTERLACED, FB_MODE_IS_VESA },
+        /* 16 1024x768-85 VESA */
+        { NULL, 85, 1024, 768, 10582, 208, 48, 36, 1, 96, 3,
+          FB_SYNC_HOR_HIGH_ACT | FB_SYNC_VERT_HIGH_ACT,
+          FB_VMODE_NONINTERLACED, FB_MODE_IS_VESA },
+        /* 17 1152x864-75 VESA */
+        { NULL, 75, 1152, 864, 9259, 256, 64, 32, 1, 128, 3,
+          FB_SYNC_HOR_HIGH_ACT | FB_SYNC_VERT_HIGH_ACT,
+          FB_VMODE_NONINTERLACED, FB_MODE_IS_VESA },
+        /* 18 1280x960-60 VESA */
+        { NULL, 60, 1280, 960, 9259, 312, 96, 36, 1, 112, 3,
+          FB_SYNC_HOR_HIGH_ACT | FB_SYNC_VERT_HIGH_ACT,
+          FB_VMODE_NONINTERLACED, FB_MODE_IS_VESA },
+        /* 19 1280x960-85 VESA */
+        { NULL, 85, 1280, 960, 6734, 224, 64, 47, 1, 160, 3,
+          FB_SYNC_HOR_HIGH_ACT | FB_SYNC_VERT_HIGH_ACT,
+          FB_VMODE_NONINTERLACED, FB_MODE_IS_VESA },
+        /* 20 1280x1024-60 VESA */
+        { NULL, 60, 1280, 1024, 9259, 248, 48, 38, 1, 112, 3,
+          FB_SYNC_HOR_HIGH_ACT | FB_SYNC_VERT_HIGH_ACT,
+          FB_VMODE_NONINTERLACED, FB_MODE_IS_VESA },
+        /* 21 1280x1024-75 VESA */
+        { NULL, 75, 1280, 1024, 7407, 248, 16, 38, 1, 144, 3,
+          FB_SYNC_HOR_HIGH_ACT | FB_SYNC_VERT_HIGH_ACT,
+          FB_VMODE_NONINTERLACED, FB_MODE_IS_VESA },
+        /* 22 1280x1024-85 VESA */
+        { NULL, 85, 1280, 1024, 6349, 224, 64, 44, 1, 160, 3,
+          FB_SYNC_HOR_HIGH_ACT | FB_SYNC_VERT_HIGH_ACT,
+          FB_VMODE_NONINTERLACED, FB_MODE_IS_VESA },
+        /* 23 1600x1200-60 VESA */
+        { NULL, 60, 1600, 1200, 6172, 304, 64, 46, 1, 192, 3,
+          FB_SYNC_HOR_HIGH_ACT | FB_SYNC_VERT_HIGH_ACT,
+          FB_VMODE_NONINTERLACED, FB_MODE_IS_VESA },
+        /* 24 1600x1200-65 VESA */
+        { NULL, 65, 1600, 1200, 5698, 304,  64, 46, 1, 192, 3,
+          FB_SYNC_HOR_HIGH_ACT | FB_SYNC_VERT_HIGH_ACT,
+          FB_VMODE_NONINTERLACED, FB_MODE_IS_VESA },
+        /* 25 1600x1200-70 VESA */
+        { NULL, 70, 1600, 1200, 5291, 304, 64, 46, 1, 192, 3,
+          FB_SYNC_HOR_HIGH_ACT | FB_SYNC_VERT_HIGH_ACT,
+          FB_VMODE_NONINTERLACED, FB_MODE_IS_VESA },
+        /* 26 1600x1200-75 VESA */
+        { NULL, 75, 1600, 1200, 4938, 304, 64, 46, 1, 192, 3,
+          FB_SYNC_HOR_HIGH_ACT | FB_SYNC_VERT_HIGH_ACT,
+          FB_VMODE_NONINTERLACED, FB_MODE_IS_VESA },
+        /* 27 1600x1200-85 VESA */
+        { NULL, 85, 1600, 1200, 4357, 304, 64, 46, 1, 192, 3,
+          FB_SYNC_HOR_HIGH_ACT | FB_SYNC_VERT_HIGH_ACT,
+          FB_VMODE_NONINTERLACED, FB_MODE_IS_VESA },
+        /* 28 1792x1344-60 VESA */
+        { NULL, 60, 1792, 1344, 4882, 328, 128, 46, 1, 200, 3,
+          FB_SYNC_VERT_HIGH_ACT, FB_VMODE_NONINTERLACED, FB_MODE_IS_VESA },
+        /* 29 1792x1344-75 VESA */
+        { NULL, 75, 1792, 1344, 3831, 352, 96, 69, 1, 216, 3,
+          FB_SYNC_VERT_HIGH_ACT, FB_VMODE_NONINTERLACED, FB_MODE_IS_VESA },
+        /* 30 1856x1392-60 VESA */
+        { NULL, 60, 1856, 1392, 4580, 352, 96, 43, 1, 224, 3,
+          FB_SYNC_VERT_HIGH_ACT, FB_VMODE_NONINTERLACED, FB_MODE_IS_VESA },
+        /* 31 1856x1392-75 VESA */
+        { NULL, 75, 1856, 1392, 3472, 352, 128, 104, 1, 224, 3,
+          FB_SYNC_VERT_HIGH_ACT, FB_VMODE_NONINTERLACED, FB_MODE_IS_VESA },
+        /* 32 1920x1440-60 VESA */
+        { NULL, 60, 1920, 1440, 4273, 344, 128, 56, 1, 200, 3,
+          FB_SYNC_VERT_HIGH_ACT, FB_VMODE_NONINTERLACED, FB_MODE_IS_VESA },
+        /* 33 1920x1440-75 VESA */
+        { NULL, 75, 1920, 1440, 3367, 352, 144, 56, 1, 224, 3,
+          FB_SYNC_VERT_HIGH_ACT, FB_VMODE_NONINTERLACED, FB_MODE_IS_VESA },
+        /* 34 1920x1200-60 RB VESA */
+        { NULL, 60, 1920, 1200, 6493, 80, 48, 26, 3, 32, 6,
+          FB_SYNC_VERT_HIGH_ACT, FB_VMODE_NONINTERLACED, FB_MODE_IS_VESA },
+        /* 35 1920x1200-60 VESA */
+        { NULL, 60, 1920, 1200, 5174, 336, 136, 36, 3, 200, 6,
+          FB_SYNC_VERT_HIGH_ACT, FB_VMODE_NONINTERLACED, FB_MODE_IS_VESA },
+        /* 36 1920x1200-75 VESA */
+        { NULL, 75, 1920, 1200, 4077, 344, 136, 46, 3, 208, 6,
+          FB_SYNC_VERT_HIGH_ACT, FB_VMODE_NONINTERLACED, FB_MODE_IS_VESA },
+        /* 37 1920x1200-85 VESA */
+        { NULL, 85, 1920, 1200, 3555, 352, 144, 53, 3, 208, 6,
+          FB_SYNC_VERT_HIGH_ACT, FB_VMODE_NONINTERLACED, FB_MODE_IS_VESA },
+        /* 38 2560x1600-60 RB VESA */
+        { NULL, 60, 2560, 1600, 3724, 80, 48, 37, 3, 32, 6,
+          FB_SYNC_HOR_HIGH_ACT, FB_VMODE_NONINTERLACED, FB_MODE_IS_VESA },
+        /* 39 2560x1600-60 VESA */
+        { NULL, 60, 2560, 1600, 2869, 472, 192, 49, 3, 280, 6,
+          FB_SYNC_VERT_HIGH_ACT, FB_VMODE_NONINTERLACED, FB_MODE_IS_VESA },
+        /* 40 2560x1600-75 VESA */
+        { NULL, 75, 2560, 1600, 2256, 488, 208, 63, 3, 280, 6,
+          FB_SYNC_VERT_HIGH_ACT, FB_VMODE_NONINTERLACED, FB_MODE_IS_VESA },
+        /* 41 2560x1600-85 VESA */
+        { NULL, 85, 2560, 1600, 1979, 488, 208, 73, 3, 280, 6,
+          FB_SYNC_VERT_HIGH_ACT, FB_VMODE_NONINTERLACED, FB_MODE_IS_VESA },
+        /* 42 2560x1600-120 RB VESA */
+        { NULL, 120, 2560, 1600, 1809, 80, 48, 85, 3, 32, 6,
+          FB_SYNC_HOR_HIGH_ACT, FB_VMODE_NONINTERLACED, FB_MODE_IS_VESA },
+};
+EXPORT_SYMBOL(fb_vesa_modes);
+#endif /* CONFIG_FB_VMODES */
+
 static struct cb_id uvesafb_cn_id = {
 	.idx = CN_IDX_V86D,
 	.val = CN_VAL_V86D_UVESAFB
@@ -735,8 +889,8 @@ static void uvesafb_vbe_getmonspecs(struct uvesafb_ktask *task,
 	/* Add valid VESA modes to our modelist. */
 	for (i = 0; i < VESA_MODEDB_SIZE; i++) {
 		if (uvesafb_is_valid_mode((struct fb_videomode *)
-						&vesa_modes[i], info))
-			fb_add_videomode(&vesa_modes[i], &info->modelist);
+						&fb_vesa_modes[i], info))
+			fb_add_videomode(&fb_vesa_modes[i], &info->modelist);
 	}
 
 	for (i = 0; i < info->monspecs.modedb_len; i++) {
