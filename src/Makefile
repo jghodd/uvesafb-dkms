@@ -2,7 +2,7 @@ CONFIG_FB_UVESA = y
 
 ifneq ($(KERNELRELEASE),)
 	obj-m := uvesafb.o
-	EXTRA_CFLAGS += -DCONFIG_FB_UVESA
+	EXTRA_CFLAGS += -DCONFIG_FB_UVESA -DCONFIG_FB_VMODES
 else
 	BASEDIR := /lib/modules/$(shell uname -r)
 	KERNELDIR ?= $(BASEDIR)/build
