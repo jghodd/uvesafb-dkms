@@ -24,6 +24,14 @@
 #include <linux/slab.h>
 #include <video/edid.h>
 #include <video/uvesafb.h>
+#include <linux/version.h>
+
+#if LINUX_VERSION_CODE >= KERNEL_VERSION(6, 1, 0)
+#define RANDOM_FUNC get_random_u32
+#else
+#define RANDOM_FUNC prandom_u32
+#endif
+	
 #ifdef CONFIG_X86
 #include <video/vga.h>
 #endif
@@ -320,7 +328,7 @@ static int uvesafb_exec(struct uvesafb_ktask *task)
 	memcpy(&m->id, &uvesafb_cn_id, sizeof(m->id));
 	m->seq = seq;
 	m->len = len;
-	m->ack = prandom_u32();
+	m->ack = RANDOM_FUNC();
 
 	/* uvesafb_task structure */
 	memcpy(m + 1, &task->t, sizeof(task->t));
